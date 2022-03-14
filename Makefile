@@ -4,4 +4,4 @@ init :
 tests :
 	py.test tests
 
-.PHONY: init test
+.PHONY : init test

@@ -1,0 +1,10 @@
+requirements.txt
+
+External dependencies thus far :
+	Selenium :
+		pip install selenium
+		- Only tested for Windows 10 & MacOS High Sierra
+		- Requires an installed instance of Google Chrome on OS
+
+	Beautiful Soup :
+		pip install beautifulsoup

@@ -1,38 +1,41 @@
 #freecon_webscraper.py
 
 ## EXTERNAL DEPENDENCIES
+import re as eX_REG
+#import asyncio	as eX_ASY					# For Async. File IO for Python
+
+import pandas as eX_PAD
+
 import requests as eX_REQ
 from requests import get as eX_GET
-import re as eX_REG
+from bs4 import BeautifulSoup as eX_BS4		# For manipulating HTML & XML files
+
 # import selenium as eX_SEM					# For manipulating a web browser
 from selenum import webdriver as eX_WEBDR
-from bs4 import BeautifulSoup as eX_BS4		# For manipulating HTML & XML files
-import pandas as eX_PAD
-#import asyncio	as eX_ASY					# For Async. File IO for Python
 
 
 ## GLOBALS
 DRtypes = { "firefox" : eX_WEBDR.Firefox ,
-				 "chrome": eX_WEBDR.chrome 			}
+			"chrome": eX_WEBDR.Chrome 				}
 current_DRtype = None
 modes = { 	"youtube": run_youtube_procedures, 
 			"twitter": run_twitter_procedures, 
 			"facebook": run_facebook_procedures,
 			"reddit": run_reddit_procedures			}
-
-keywords = {}
+keywords = []
 current_URL = 0
-script
+task_script = []
 
 URLs = [""]
 client = None
 
-### Youtube Specific
 
+### Youtube Specific
 parsed_data_repository["youtube"] = {}
 current_relevent_video_URLs = []
 total_videos_processed = 0
 total_related_user_profiles_processed = 0
+
 
 ## CLASS DECLARATIONS
 class Scraper () :
